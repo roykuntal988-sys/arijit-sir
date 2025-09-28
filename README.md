@@ -1,2 +1,307 @@
-# arijit-sir
-learn social science 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Social Science Learning (CLASS 8 TO 12) by Arijit sir </title>
+<style>
+:root{
+  --bg:#f6f7fb;
+  --card:#fff;
+  --muted:#6b7280;
+  --accent:#4f46e5;
+  --accent2:#ec4899;
+}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  /* Background image removed */
+  background-color: var(--bg);
+  color:#0f172a;
+}
+body::before{
+  content:"";
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,0.7);
+  z-index:-1;
+}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+.container{
+  max-width:1100px;
+  margin:28px auto;
+  padding:20px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 16px;
+  animation: fadeIn 0.8s ease;
+}
+header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:var(--card);
+  padding:14px 18px;
+  border-radius:14px;
+  box-shadow:0 6px 18px rgba(15,23,42,0.12);
+}
+.brand{display:flex; gap:12px; align-items:center;}
+.logo{
+  width:52px; height:52px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; font-weight:800; font-size:20px;
+}
+nav button{
+  margin-left:10px;
+  background:transparent;
+  border:0;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  transition: all 0.3s ease;
+}
+nav button:hover{background:rgba(79,70,229,0.1); transform:translateY(-2px);}
+nav button.primary{background:var(--accent); color:#fff;}
+nav button.primary:hover{background:var(--accent2); transform:scale(1.05);}
+.grid{
+  display:grid;
+  grid-template-columns:1fr 320px;
+  gap:20px;
+  margin-top:20px;
+}
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 6px 20px rgba(15,23,42,0.12);
+  margin-top:16px;
+  opacity:0;
+  transform:translateY(20px);
+  animation: fadeIn 0.9s ease forwards;
+}
+.card:hover{transform:translateY(-4px); transition:transform 0.3s ease;}
+.muted{color:var(--muted); font-size:14px;}
+footer{margin-top:30px; text-align:center; color:var(--muted); font-size:13px;}
+input{margin-top:8px; padding:8px; border-radius:8px; border:1px solid #ccc; transition: all 0.3s ease;}
+input:focus{border-color: var(--accent); outline:none; box-shadow:0 0 6px rgba(79,70,229,0.4);}
+.unlock-btn{margin-left:8px; background:var(--accent); color:#fff; padding:8px 14px; border:0; border-radius:10px; cursor:pointer; transition: all 0.3s ease;}
+.unlock-btn:hover{background:var(--accent2); transform: scale(1.05);}
+.class-content{display:none; margin-top:12px; animation: fadeIn 0.6s ease;}
+@media(max-width:980px){.grid{grid-template-columns:1fr;}}
+/* Sign In Modal */
+#loginModal{
+  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:center;
+}
+#loginModal .modal-content{
+  background:#fff; padding:24px; border-radius:12px; width:360px; box-shadow:0 8px 20px rgba(0,0,0,0.3); position:relative;
+}
+#loginModal .modal-content input{margin-bottom:12px;}
+#loginModal .modal-content span{position:absolute; top:10px; right:14px; cursor:pointer; font-weight:bold;}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="brand">
+    <div class="logo">S</div>
+    <div>
+      <div style="font-weight:700">Social Science by Arijit sir</div>
+      <div class="muted">Learn history • civics • geography</div>
+    </div>
+  </div>
+  <nav>
+    <button onclick="showSection('homeSection')">Courses</button>
+    <button onclick="showSection('dashboardSection')">Dashboard</button>
+    <button class="primary">Sign in</button>
+  </nav>
+</header>
+
+<div class="grid">
+  <main>
+    <!-- HOME SECTION -->
+    <section id="homeSection">
+      <section class="card">
+        <h2>Welcome to Social Science</h2>
+        <div class="muted">Explore topics by class, read Q&A resources, and view reference documents.</div>
+      </section>
+
+      <!-- CLASS 8 -->
+      <section class="card">
+        <h2>Class 8 🔒</h2>
+        <label>Enter password:</label>
+        <input type="password" id="class8pw" placeholder="Password">
+        <button class="unlock-btn" onclick="unlock('class8')">Unlock</button>
+        <div class="class-content" id="class8content">
+          <h3>Judiciary – Important Q&A</h3>
+          <article><h4>1. Which is the highest judicial authority in India?</h4><p><b>Ans:</b> Supreme Court of India</p></article>
+          <article><h4>2. Who appoints the Chief Justice of India?</h4><p><b>Ans:</b> President of India</p></article>
+          <article><h4>3. What is Judicial Review?</h4><p><b>Ans:</b> Power of judiciary to review laws and executive actions</p></article>
+          <article><h4>4. How many levels of courts exist in India?</h4><p><b>Ans:</b> Three (Supreme, High, District)</p></article>
+          <article><h4>5. The District Court is headed by:</h4><p><b>Ans:</b> District Judge</p></article>
+          <article><h4>6. Which case ensures equality in education?</h4><p><b>Ans:</b> Unnikrishnan Case</p></article>
+          <article><h4>7. Which Article ensures judicial independence?</h4><p><b>Ans:</b> Article 124</p></article>
+        </div>
+      </section>
+
+      <!-- CLASS 9 -->
+      <section class="card">
+        <h2>Class 9 🔒</h2>
+        <input type="password" id="class9pw" placeholder="Password">
+        <button class="unlock-btn" onclick="unlock('class9')">Unlock</button>
+        <div class="class-content" id="class9content"><p class="muted">Content coming soon...</p></div>
+      </section>
+
+      <!-- CLASS 10 -->
+      <section class="card">
+        <h2>Class 10 🔒</h2>
+        <input type="password" id="class10pw" placeholder="Password">
+        <button class="unlock-btn" onclick="unlock('class10')">Unlock</button>
+        <div class="class-content" id="class10content"><p class="muted">Content coming soon...</p></div>
+      </section>
+
+      <!-- CLASS 11 -->
+      <section class="card">
+        <h2>Class 11 🔒</h2>
+        <input type="password" id="class11pw" placeholder="Password">
+        <button class="unlock-btn" onclick="unlock('class11')">Unlock</button>
+        <div class="class-content" id="class11content"><p class="muted">Content coming soon...</p></div>
+      </section>
+
+      <!-- CLASS 12 -->
+      <section class="card">
+        <h2>Class 12 🔒</h2>
+        <input type="password" id="class12pw" placeholder="Password">
+        <button class="unlock-btn" onclick="unlock('class12')">Unlock</button>
+        <div class="class-content" id="class12content"><p class="muted">Content coming soon...</p></div>
+      </section>
+    </section>
+
+    <!-- DASHBOARD SECTION -->
+    <section class="card" id="dashboardSection" style="display:none;">
+      <h2>📋 Dashboard – Class Passwords</h2>
+      <ul>
+        <li>Class 8 → <code>class8pass</code></li>
+        <li>Class 9 → <code>class9pass</code></li>
+        <li>Class 10 → <code>class10pass</code></li>
+        <li>Class 11 → <code>class11pass</code></li>
+        <li>Class 12 → <code>class12pass</code></li>
+      </ul>
+    </section>
+  </main>
+
+  <aside>
+    <div class="card">
+      <h4>User Panel</h4>
+      <p><b>Not signed in</b></p>
+      <p class="muted">Sign in to personalize</p>
+    </div>
+  </aside>
+</div>
+
+<footer>© <span id="year"></span> Social Science Demo</footer>
+</div>
+
+<!-- STUDENT LOGIN MODAL -->
+<div id="loginModal">
+  <div class="modal-content">
+    <h3>Student Registration / Login</h3>
+    <div id="registerForm">
+      <label>Name:</label>
+      <input type="text" id="regName" placeholder="Enter your name">
+      <label>Email:</label>
+      <input type="email" id="regEmail" placeholder="Enter your email">
+      <button style="width:100%; padding:10px; background:var(--accent); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="registerStudent()">Register</button>
+    </div>
+    <div id="loginForm" style="margin-top:16px; border-top:1px solid #ccc; padding-top:12px;">
+      <label>Email:</label>
+      <input type="email" id="loginEmail" placeholder="Enter your email">
+      <button style="width:100%; padding:10px; background:var(--accent2); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="loginStudent()">Login</button>
+    </div>
+    <span onclick="closeModal()">&times;</span>
+  </div>
+</div>
+
+<script>
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Show Sections
+function showSection(id){
+  document.getElementById('homeSection').style.display = (id==='homeSection'?'block':'none');
+  document.getElementById('dashboardSection').style.display = (id==='dashboardSection'?'block':'none');
+}
+
+// Unlock Classes
+function unlock(cls){
+  const val = document.getElementById(cls+'pw').value;
+  if(val === cls+'pass'){
+    document.getElementById(cls+'content').style.display='block';
+    document.getElementById(cls+'content').scrollIntoView({behavior:'smooth'});
+  } else{
+    alert('❌ Incorrect password!');
+  }
+}
+
+// Student storage
+let students = JSON.parse(localStorage.getItem('students') || "[]");
+
+// Open Modal
+document.querySelector('.primary').addEventListener('click', function(){
+  document.getElementById('loginModal').style.display = 'flex';
+});
+
+// Close Modal
+function closeModal(){
+  document.getElementById('loginModal').style.display = 'none';
+}
+
+// Register
+function registerStudent(){
+  let name = document.getElementById('regName').value.trim();
+  let email = document.getElementById('regEmail').value.trim();
+  if(!name || !email){ alert("Enter both name and email!"); return; }
+  if(students.find(s => s.email===email)){ alert("Email exists! Login."); return; }
+  students.push({name,email});
+  localStorage.setItem('students', JSON.stringify(students));
+  document.querySelector('aside .card p b').textContent = name;
+  document.querySelector('aside .card p.muted').textContent = "You are signed in!";
+  localStorage.setItem('lastStudent', JSON.stringify({name,email}));
+  alert("Welcome, " + name + "!");
+  closeModal();
+}
+
+// Login
+function loginStudent(){
+  let email = document.getElementById('loginEmail').value.trim();
+  let student = students.find(s=>s.email===email);
+  if(student){
+    document.querySelector('aside .card p b').textContent = student.name;
+    document.querySelector('aside .card p.muted').textContent = "You are signed in!";
+    localStorage.setItem('lastStudent', JSON.stringify(student));
+    alert("Welcome back, " + student.name + "!");
+    closeModal();
+  } else{
+    alert("Email not found! Please register.");
+  }
+}
+
+// Load last student
+window.onload=function(){
+  let lastStudent=JSON.parse(localStorage.getItem('lastStudent'));
+  if(lastStudent){
+    document.querySelector('aside .card p b').textContent=lastStudent.name;
+    document.querySelector('aside .card p.muted').textContent="You are signed in!";
+  }
+}
+
+// Close modal if click outside
+window.onclick=function(e){ if(e.target==document.getElementById('loginModal')) closeModal(); }
+</script>
+</body>
+</html>
