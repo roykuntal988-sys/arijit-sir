@@ -1,308 +1,168 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Social Science Learning (CLASS 8 TO 12) by Arijit sir </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Science Hub (Class 8–12)</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 :root{
-  --bg:#f6f7fb;
-  --card:#fff;
-  --muted:#6b7280;
-  --accent:#4f46e5;
-  --accent2:#ec4899;
+--accent:#f59e0b;--accent2:#ef4444;--bg:#0f172a;--card:#1e293b;--muted:#94a3b8;--text:#f1f5f9
 }
-html,body{
-  height:100%;
-  margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  /* Background image removed */
-  background-color: var(--bg);
-  color:#0f172a;
-}
-body::before{
-  content:"";
-  position:fixed;
-  top:0;left:0;right:0;bottom:0;
-  background:rgba(255,255,255,0.7);
-  z-index:-1;
-}
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
-}
-.container{
-  max-width:1100px;
-  margin:28px auto;
-  padding:20px;
-  background: rgba(255,255,255,0.95);
-  border-radius: 16px;
-  animation: fadeIn 0.8s ease;
-}
-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:var(--card);
-  padding:14px 18px;
-  border-radius:14px;
-  box-shadow:0 6px 18px rgba(15,23,42,0.12);
-}
-.brand{display:flex; gap:12px; align-items:center;}
-.logo{
-  width:52px; height:52px;
-  border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:flex; align-items:center; justify-content:center;
-  color:#fff; font-weight:800; font-size:20px;
-}
-nav button{
-  margin-left:10px;
-  background:transparent;
-  border:0;
-  padding:8px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  transition: all 0.3s ease;
-}
-nav button:hover{background:rgba(79,70,229,0.1); transform:translateY(-2px);}
-nav button.primary{background:var(--accent); color:#fff;}
-nav button.primary:hover{background:var(--accent2); transform:scale(1.05);}
-.grid{
-  display:grid;
-  grid-template-columns:1fr 320px;
-  gap:20px;
-  margin-top:20px;
-}
-.card{
-  background:var(--card);
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 6px 20px rgba(15,23,42,0.12);
-  margin-top:16px;
-  opacity:0;
-  transform:translateY(20px);
-  animation: fadeIn 0.9s ease forwards;
-}
-.card:hover{transform:translateY(-4px); transition:transform 0.3s ease;}
-.muted{color:var(--muted); font-size:14px;}
-footer{margin-top:30px; text-align:center; color:var(--muted); font-size:13px;}
-input{margin-top:8px; padding:8px; border-radius:8px; border:1px solid #ccc; transition: all 0.3s ease;}
-input:focus{border-color: var(--accent); outline:none; box-shadow:0 0 6px rgba(79,70,229,0.4);}
-.unlock-btn{margin-left:8px; background:var(--accent); color:#fff; padding:8px 14px; border:0; border-radius:10px; cursor:pointer; transition: all 0.3s ease;}
-.unlock-btn:hover{background:var(--accent2); transform: scale(1.05);}
-.class-content{display:none; margin-top:12px; animation: fadeIn 0.6s ease;}
-@media(max-width:980px){.grid{grid-template-columns:1fr;}}
-/* Sign In Modal */
-#loginModal{
-  display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.5); z-index:999; justify-content:center; align-items:center;
-}
-#loginModal .modal-content{
-  background:#fff; padding:24px; border-radius:12px; width:360px; box-shadow:0 8px 20px rgba(0,0,0,0.3); position:relative;
-}
-#loginModal .modal-content input{margin-bottom:12px;}
-#loginModal .modal-content span{position:absolute; top:10px; right:14px; cursor:pointer; font-weight:bold;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+header{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;padding:20px 24px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
+.container{max-width:1200px;margin:0 auto;padding:0 16px}
+.brand{font-weight:700;font-size:24px;letter-spacing:1px}
+.hero{margin-top:20px;background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.15));padding:40px;border-radius:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px)}
+.hero h1{margin:0;font-size:36px;font-weight:700;line-height:1.2}
+.hero p{margin:10px 0 0;color:var(--muted);font-size:18px}
+.search{margin-left:auto}
+input[type=search]{padding:12px 16px;border-radius:12px;border:1px solid #334155;background:#0f172a;color:var(--text);min-width:250px;transition:0.3s}
+input[type=search]:focus{border-color:var(--accent);outline:none;box-shadow:0 0 8px var(--accent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
+.card{background:var(--card);padding:28px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.4);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
+.card h3{margin:0 0 14px;font-size:24px;font-weight:700}
+.badge{display:inline-block;padding:6px 12px;border-radius:999px;font-size:12px;background:var(--accent);color:#fff;font-weight:600}
+.subject-list{list-style:none;padding:0;margin:14px 0 0}
+.subject-list li{padding:12px 16px;border-radius:12px;margin-bottom:12px;background:#0f172a;border:1px solid #334155;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
+.class-switch{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:6px 12px;border-radius:8px;cursor:pointer;transition:0.3s;font-size:14px}
+.class-switch.active{background:var(--accent2);color:#fff;border:none}
+.class-switch:hover{background:var(--accent);color:#fff}
+button{background:var(--accent);color:#fff;border:0;padding:10px 18px;border-radius:12px;cursor:pointer;font-weight:600;transition:0.3s;font-size:14px}
+button:hover{background:var(--accent2)}
+button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+button.secondary:hover{background:var(--accent);color:#fff}
+footer{margin:40px 0 60px;color:var(--muted);text-align:center;font-size:14px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:16px;visibility:hidden;opacity:0;transition:all .3s ease;z-index:9999}
+.modal.open{visibility:visible;opacity:1}
+.modal-card{background:#1e293b;padding:28px;border-radius:16px;max-width:760px;width:100%;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
+.modal-card h3{margin-bottom:14px}
+.modal-card button{margin-top:12px}
 </style>
 </head>
 <body>
-<div class="container">
 <header>
-  <div class="brand">
-    <div class="logo">S</div>
-    <div>
-      <div style="font-weight:700">Social Science by Arijit sir</div>
-      <div class="muted">Learn history • civics • geography</div>
-    </div>
-  </div>
-  <nav>
-    <button onclick="showSection('homeSection')">Courses</button>
-    <button onclick="showSection('dashboardSection')">Dashboard</button>
-    <button class="primary">Sign in</button>
-  </nav>
+<div class="container" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+<div style="display:flex;flex-direction:column">
+<div class="brand">Social Science Hub</div>
+<div style="font-size:13px;color:rgba(255,255,255,0.9)">Owner: <strong>Arijit Sir</strong> • Developer: <strong>Kuntal Roy</strong></div>
+</div>
+</div>
 </header>
-
-<div class="grid">
-  <main>
-    <!-- HOME SECTION -->
-    <section id="homeSection">
-      <section class="card">
-        <h2>Welcome to Social Science</h2>
-        <div class="muted">Explore topics by class, read Q&A resources, and view reference documents.</div>
-      </section>
-
-      <!-- CLASS 8 -->
-      <section class="card">
-        <h2>Class 8 🔒</h2>
-        <label>Enter password:</label>
-        <input type="password" id="class8pw" placeholder="Password">
-        <button class="unlock-btn" onclick="unlock('class8')">Unlock</button>
-        <div class="class-content" id="class8content">
-          <h3>Judiciary – Important Q&A</h3>
-          <article><h4>1. Which is the highest judicial authority in India?</h4><p><b>Ans:</b> Supreme Court of India</p></article>
-          <article><h4>2. Who appoints the Chief Justice of India?</h4><p><b>Ans:</b> President of India</p></article>
-          <article><h4>3. What is Judicial Review?</h4><p><b>Ans:</b> Power of judiciary to review laws and executive actions</p></article>
-          <article><h4>4. How many levels of courts exist in India?</h4><p><b>Ans:</b> Three (Supreme, High, District)</p></article>
-          <article><h4>5. The District Court is headed by:</h4><p><b>Ans:</b> District Judge</p></article>
-          <article><h4>6. Which case ensures equality in education?</h4><p><b>Ans:</b> Unnikrishnan Case</p></article>
-          <article><h4>7. Which Article ensures judicial independence?</h4><p><b>Ans:</b> Article 124</p></article>
-        </div>
-      </section>
-
-      <!-- CLASS 9 -->
-      <section class="card">
-        <h2>Class 9 🔒</h2>
-        <input type="password" id="class9pw" placeholder="Password">
-        <button class="unlock-btn" onclick="unlock('class9')">Unlock</button>
-        <div class="class-content" id="class9content"><p class="muted">Content coming soon...</p></div>
-      </section>
-
-      <!-- CLASS 10 -->
-      <section class="card">
-        <h2>Class 10 🔒</h2>
-        <input type="password" id="class10pw" placeholder="Password">
-        <button class="unlock-btn" onclick="unlock('class10')">Unlock</button>
-        <div class="class-content" id="class10content"><p class="muted">Content coming soon...</p></div>
-      </section>
-
-      <!-- CLASS 11 -->
-      <section class="card">
-        <h2>Class 11 🔒</h2>
-        <input type="password" id="class11pw" placeholder="Password">
-        <button class="unlock-btn" onclick="unlock('class11')">Unlock</button>
-        <div class="class-content" id="class11content"><p class="muted">Content coming soon...</p></div>
-      </section>
-
-      <!-- CLASS 12 -->
-      <section class="card">
-        <h2>Class 12 🔒</h2>
-        <input type="password" id="class12pw" placeholder="Password">
-        <button class="unlock-btn" onclick="unlock('class12')">Unlock</button>
-        <div class="class-content" id="class12content"><p class="muted">Content coming soon...</p></div>
-      </section>
-    </section>
-
-    <!-- DASHBOARD SECTION -->
-    <section class="card" id="dashboardSection" style="display:none;">
-      <h2>📋 Dashboard – Class Passwords</h2>
-      <ul>
-        <li>Class 8 → <code>class8pass</code></li>
-        <li>Class 9 → <code>class9pass</code></li>
-        <li>Class 10 → <code>class10pass</code></li>
-        <li>Class 11 → <code>class11pass</code></li>
-        <li>Class 12 → <code>class12pass</code></li>
-      </ul>
-    </section>
-  </main>
-
-  <aside>
-    <div class="card">
-      <h4>User Panel</h4>
-      <p><b>Not signed in</b></p>
-      <p class="muted">Sign in to personalize</p>
-    </div>
-  </aside>
+<main class="container">
+<section class="hero">
+<div>
+<h1>🌍 Social Science Learning Hub</h1>
+<p>Explore History, Geography, Civics, and Economics with notes, past papers, and quizzes.</p>
 </div>
-
-<footer>© <span id="year"></span> Social Science Demo</footer>
+<div class="search">
+<input id="searchInput" type="search" placeholder="🔍 Search subjects" oninput="filterSubjects()" />
 </div>
-
-<!-- STUDENT LOGIN MODAL -->
-<div id="loginModal">
-  <div class="modal-content">
-    <h3>Student Registration / Login</h3>
-    <div id="registerForm">
-      <label>Name:</label>
-      <input type="text" id="regName" placeholder="Enter your name">
-      <label>Email:</label>
-      <input type="email" id="regEmail" placeholder="Enter your email">
-      <button style="width:100%; padding:10px; background:var(--accent); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="registerStudent()">Register</button>
-    </div>
-    <div id="loginForm" style="margin-top:16px; border-top:1px solid #ccc; padding-top:12px;">
-      <label>Email:</label>
-      <input type="email" id="loginEmail" placeholder="Enter your email">
-      <button style="width:100%; padding:10px; background:var(--accent2); color:#fff; border:none; border-radius:8px; cursor:pointer;" onclick="loginStudent()">Login</button>
-    </div>
-    <span onclick="closeModal()">&times;</span>
-  </div>
+</section>
+<section style="margin-top:24px">
+<div style="display:flex;gap:12px;align-items:center;">
+<h2 style="margin:0;font-size:24px">Subjects</h2>
+<span class="badge">Class 8–12</span>
 </div>
-
+<div class="grid" id="subjectsGrid"></div>
+</section>
+</main>
+<footer>© <span id="year"></span> Social Science Hub — Learn for the Future 🚀</footer>
+<div id="modal" class="modal" onclick="if(event.target.id==='modal') closeModal()">
+<div class="modal-card" id="modalCard"></div>
+</div>
 <script>
-// Year
-document.getElementById('year').textContent = new Date().getFullYear();
+// Subjects
+const subjects=[
+{ id:'his',name:'History',classes:['8','9','10','11','12'],desc:'World history, national history and civics context.'},
+{ id:'geo',name:'Geography',classes:['8','9','10','11','12'],desc:'Maps, environment, population and resources.'},
+{ id:'civ',name:'Civics',classes:['8','9','10','11','12'],desc:'Citizenship, government, rights, responsibilities.'},
+{ id:'eco',name:'Economics',classes:['9','10','11','12'],desc:'Microeconomics, macroeconomics, development studies.'}
+];
 
-// Show Sections
-function showSection(id){
-  document.getElementById('homeSection').style.display = (id==='homeSection'?'block':'none');
-  document.getElementById('dashboardSection').style.display = (id==='dashboardSection'?'block':'none');
-}
+// Notes
+const notesData={
+civ:{'8':[{"question":"What is marginalisation?","answer":"Being pushed to the margins of society, denied basic services and rights."}]}};
 
-// Unlock Classes
-function unlock(cls){
-  const val = document.getElementById(cls+'pw').value;
-  if(val === cls+'pass'){
-    document.getElementById(cls+'content').style.display='block';
-    document.getElementById(cls+'content').scrollIntoView({behavior:'smooth'});
-  } else{
-    alert('❌ Incorrect password!');
-  }
-}
+// Quizzes
+const quizData={
+civ:{'8':[{"question":"Marginalisation affects which groups?","options":["Majority","Minority","Both"],"answer":2}]}};
 
-// Student storage
-let students = JSON.parse(localStorage.getItem('students') || "[]");
+document.getElementById('year').textContent=new Date().getFullYear();
+const subjectsGrid=document.getElementById('subjectsGrid');
 
-// Open Modal
-document.querySelector('.primary').addEventListener('click', function(){
-  document.getElementById('loginModal').style.display = 'flex';
+// Render subjects
+function renderSubjects(list){
+subjectsGrid.innerHTML='';
+list.forEach(s=>{
+const el=document.createElement('div');el.className='card';
+let classButtons=s.classes.map(cls=>`<button class="class-switch" data-subject="${s.id}" data-class="${cls}">${cls}</button>`).join('');
+el.innerHTML=`<h3>${s.name} <span style="font-size:12px;color:var(--muted)">(Class ${s.classes.join(',')})</span></h3>
+<p style="color:var(--muted);margin:6px 0">${s.desc}</p>
+<ul class="subject-list">
+<li>Notes <div style="display:flex;gap:5px;">${classButtons}</div></li>
+<li>Test <button class="test-btn" data-subject="${s.id}" data-class="${s.classes[0]}">Start Test</button></li>
+</ul>`;
+subjectsGrid.appendChild(el);
 });
-
-// Close Modal
-function closeModal(){
-  document.getElementById('loginModal').style.display = 'none';
+attachClassEvents();
+attachTestEvents();
 }
 
-// Register
-function registerStudent(){
-  let name = document.getElementById('regName').value.trim();
-  let email = document.getElementById('regEmail').value.trim();
-  if(!name || !email){ alert("Enter both name and email!"); return; }
-  if(students.find(s => s.email===email)){ alert("Email exists! Login."); return; }
-  students.push({name,email});
-  localStorage.setItem('students', JSON.stringify(students));
-  document.querySelector('aside .card p b').textContent = name;
-  document.querySelector('aside .card p.muted').textContent = "You are signed in!";
-  localStorage.setItem('lastStudent', JSON.stringify({name,email}));
-  alert("Welcome, " + name + "!");
-  closeModal();
+// Class buttons
+function attachClassEvents(){
+document.querySelectorAll('.class-switch').forEach(btn=>{
+btn.addEventListener('click',function(){
+const subject=this.dataset.subject;
+const cls=this.dataset.class;
+document.querySelectorAll(`.class-switch[data-subject="${subject}"]`).forEach(b=>b.classList.remove('active'));
+this.classList.add('active');
+openModal('notes',subject,cls);
+});
+});
 }
 
-// Login
-function loginStudent(){
-  let email = document.getElementById('loginEmail').value.trim();
-  let student = students.find(s=>s.email===email);
-  if(student){
-    document.querySelector('aside .card p b').textContent = student.name;
-    document.querySelector('aside .card p.muted').textContent = "You are signed in!";
-    localStorage.setItem('lastStudent', JSON.stringify(student));
-    alert("Welcome back, " + student.name + "!");
-    closeModal();
-  } else{
-    alert("Email not found! Please register.");
-  }
+// Test buttons
+function attachTestEvents(){
+document.querySelectorAll('.test-btn').forEach(btn=>{
+btn.addEventListener('click',function(){
+const subject=this.dataset.subject;
+const cls=this.dataset.class;
+openModal('quiz',subject,cls);
+});
+});
 }
 
-// Load last student
-window.onload=function(){
-  let lastStudent=JSON.parse(localStorage.getItem('lastStudent'));
-  if(lastStudent){
-    document.querySelector('aside .card p b').textContent=lastStudent.name;
-    document.querySelector('aside .card p.muted').textContent="You are signed in!";
-  }
+// Filter
+function filterSubjects(){
+const q=document.getElementById('searchInput').value.toLowerCase().trim();
+renderSubjects(subjects.filter(s=>s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q)));
 }
 
-// Close modal if click outside
-window.onclick=function(e){ if(e.target==document.getElementById('loginModal')) closeModal(); }
+// Modal open
+function openModal(type,id,cls){
+const modal=document.getElementById('modal');
+const card=document.getElementById('modalCard');
+modal.classList.add('open');
+let content='';
+if(type==='notes'){
+const data=notesData[id]&&notesData[id][cls];
+if(data){let qaHTML=data.map(q=>`<li><strong>Q:</strong> ${q.question}<br><strong>A:</strong> ${q.answer}</li>`).join('');content=`<h3>${id.toUpperCase()} — Class ${cls} Notes</h3><ul>${qaHTML}</ul><button onclick="closeModal()">Close</button>`;}
+else{content=`<h3>${id.toUpperCase()} — Class ${cls} Notes</h3><p>No notes available yet.</p><button onclick="closeModal()">Close</button>`;}
+}
+if(type==='quiz'){
+const quiz=quizData[id]&&quizData[id][cls];
+if(quiz){let qHTML=quiz.map((q,i)=>`<p><strong>${i+1}. ${q.question}</strong></p>${q.options.map((o,j)=>`<button onclick="alert('${o} selected')">${o}</button>`).join(' ')}`).join('<hr>');content=`<h3>${id.toUpperCase()} — Class ${cls} Test</h3>${qHTML}<button onclick="closeModal()">Close</button>`;}
+else{content=`<h3>${id.toUpperCase()} — Class ${cls} Test</h3><p>No quiz available yet.</p><button onclick="closeModal()">Close</button>`;}
+}
+card.innerHTML=content;
+}
+
+function closeModal(){document.getElementById('modal').classList.remove('open');}
+
+renderSubjects(subjects);
 </script>
 </body>
-
 </html>
