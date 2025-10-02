@@ -1,4 +1,3 @@
-<html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -80,6 +79,7 @@
   <header>
     <h1>Social Science Hub — Class 8 to 12</h1>
     <p>Owner: Arijit Sir | Developer: Kuntal Roy</p>
+    <p id="welcomeUser"></p> <!-- 👈 Username will show here -->
     <button onclick="logout()">Logout</button>
     <label class="toggle" style="position:absolute; top:20px; left:30px;">
       <input type="checkbox" onchange="toggleMode(this)">
@@ -148,13 +148,16 @@ function login(){
   let u=document.getElementById("loginUser").value;
   let p=document.getElementById("loginPass").value;
   if(localStorage.getItem("user_"+u)===p){
+    localStorage.setItem("currentUser", u); // store current user
     document.getElementById("loginPage").style.display="none";
     document.getElementById("mainPage").style.display="block";
+    document.getElementById("welcomeUser").textContent = "Welcome, " + u + "!";
     renderSubjects();
   } else alert("Invalid credentials");
 }
 
 function logout(){
+  localStorage.removeItem("currentUser");
   document.getElementById("mainPage").style.display="none";
   document.getElementById("loginPage").style.display="flex";
 }
