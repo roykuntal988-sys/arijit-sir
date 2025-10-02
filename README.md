@@ -5,164 +5,163 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Social Science Hub (Class 8–12)</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-:root{
---accent:#f59e0b;--accent2:#ef4444;--bg:#0f172a;--card:#1e293b;--muted:#94a3b8;--text:#f1f5f9
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-header{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;padding:20px 24px;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.4)}
-.container{max-width:1200px;margin:0 auto;padding:0 16px}
-.brand{font-weight:700;font-size:24px;letter-spacing:1px}
-.hero{margin-top:20px;background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(239,68,68,0.15));padding:40px;border-radius:20px;display:flex;gap:20px;align-items:center;backdrop-filter:blur(8px)}
-.hero h1{margin:0;font-size:36px;font-weight:700;line-height:1.2}
-.hero p{margin:10px 0 0;color:var(--muted);font-size:18px}
-.search{margin-left:auto}
-input[type=search]{padding:12px 16px;border-radius:12px;border:1px solid #334155;background:#0f172a;color:var(--text);min-width:250px;transition:0.3s}
-input[type=search]:focus{border-color:var(--accent);outline:none;box-shadow:0 0 8px var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;margin-top:30px}
-.card{background:var(--card);padding:28px;border-radius:20px;box-shadow:0 8px 30px rgba(0,0,0,0.4);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 12px 40px rgba(0,0,0,0.6)}
-.card h3{margin:0 0 14px;font-size:24px;font-weight:700}
-.badge{display:inline-block;padding:6px 12px;border-radius:999px;font-size:12px;background:var(--accent);color:#fff;font-weight:600}
-.subject-list{list-style:none;padding:0;margin:14px 0 0}
-.subject-list li{padding:12px 16px;border-radius:12px;margin-bottom:12px;background:#0f172a;border:1px solid #334155;display:flex;flex-direction:column;gap:6px;color:var(--muted)}
-.class-switch{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:6px 12px;border-radius:8px;cursor:pointer;transition:0.3s;font-size:14px}
-.class-switch.active{background:var(--accent2);color:#fff;border:none}
-.class-switch:hover{background:var(--accent);color:#fff}
-button{background:var(--accent);color:#fff;border:0;padding:10px 18px;border-radius:12px;cursor:pointer;font-weight:600;transition:0.3s;font-size:14px}
-button:hover{background:var(--accent2)}
-button.secondary{background:transparent;color:var(--accent);border:1px solid var(--accent)}
-button.secondary:hover{background:var(--accent);color:#fff}
-footer{margin:40px 0 60px;color:var(--muted);text-align:center;font-size:14px}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,0.7);display:flex;align-items:center;justify-content:center;padding:16px;visibility:hidden;opacity:0;transition:all .3s ease;z-index:9999}
-.modal.open{visibility:visible;opacity:1}
-.modal-card{background:#1e293b;padding:28px;border-radius:16px;max-width:760px;width:100%;box-shadow:0 18px 60px rgba(0,0,0,0.6)}
-.modal-card h3{margin-bottom:14px}
-.modal-card button{margin-top:12px}
+  body{margin:0;font-family:'Helvetica Neue',Arial,sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:#fff;transition:background 0.5s,color 0.5s;}
+  body.light{background:linear-gradient(135deg,#f0f0f0,#dcdcdc);color:#111;}
+
+  .glass{background:rgba(255,255,255,0.05);border-radius:25px;border:1px solid rgba(255,255,255,0.1);backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);box-shadow:0 8px 32px rgba(0,0,0,0.25);padding:30px;width:95%;max-width:1000px;margin:20px auto;transition:background 0.5s,color 0.5s;}
+  body.light .glass{background:rgba(255,255,255,0.2);color:#111;border:1px solid rgba(0,0,0,0.1);}
+
+  .login-page,.signup-page{display:none;justify-content:center;align-items:center;height:100vh;}
+  .login-box{background:rgba(255,255,255,0.05);border-radius:20px;padding:30px;width:300px;text-align:center;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(10px);transition:background 0.5s,color 0.5s;}
+  body.light .login-box{background:rgba(255,255,255,0.2);color:#111;}
+  .login-box input{width:90%;padding:10px;margin:10px 0;border-radius:10px;border:none;}
+  .login-box button{width:95%;padding:10px;border-radius:12px;border:none;background:#f59e0b;color:#fff;font-weight:bold;cursor:pointer;transition:background 0.3s;}
+  .login-box button:hover{background:#ef4444;}
+  .switch{color:#f59e0b;cursor:pointer;display:block;margin-top:15px;}
+
+  header{background:linear-gradient(90deg,#f59e0b,#ef4444);padding:20px;text-align:center;border-radius:25px;margin-bottom:20px;position:relative;transition:background 0.5s;}
+  header h1{margin:0;font-size:26px;}
+  header p{margin:5px 0 0 0;font-size:14px;color:#eee;}
+  body.light header p{color:#333;}
+  header button{position:absolute;top:20px;right:30px;background:#f59e0b;border:none;border-radius:12px;padding:8px 15px;color:#fff;cursor:pointer;}
+  header button:hover{background:#ef4444;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+  .card{background:rgba(255,255,255,0.05);border-radius:25px;padding:20px;box-shadow:0 8px 32px rgba(0,0,0,0.25);text-align:center;transition:background 0.5s;}
+  body.light .card{background:rgba(255,255,255,0.2);color:#111;}
+  .card h3{margin-top:0;}
+  .card button{background:#f59e0b;border:none;border-radius:15px;padding:6px 12px;margin:5px;cursor:pointer;transition:transform 0.2s;}
+  .card button:hover{background:#ef4444;transform:scale(1.05);}
+
+  .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);display:none;justify-content:center;align-items:center;transition:opacity 0.3s;}
+  .modal-content{background:rgba(255,255,255,0.05);border-radius:20px;padding:20px;max-width:600px;width:90%;backdrop-filter:blur(15px);box-shadow:0 8px 32px rgba(0,0,0,0.25);transition:background 0.5s,color 0.5s;}
+  body.light .modal-content{background:rgba(255,255,255,0.2);color:#111;}
+  .modal-content button{margin-top:15px;background:#f59e0b;border:none;padding:8px 15px;border-radius:12px;cursor:pointer;transition:background 0.3s;}
+  .modal-content button:hover{background:#ef4444;}
+
+  footer{text-align:center;margin-top:30px;font-size:14px;color:#aaa;transition:color 0.5s;}
+  body.light footer{color:#333;}
+
+  /* TOGGLE SWITCH */
+  .toggle{position:relative;display:inline-block;width:50px;height:28px;margin:10px;}
+  .toggle input{display:none;}
+  .slider{position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;background-color:#ccc;transition:.4s;border-radius:28px;}
+  .slider:before{position:absolute;content:"";height:20px;width:20px;left:4px;bottom:4px;background-color:white;transition:.4s;border-radius:50%;}
+  input:checked + .slider{background-color:#f59e0b;}
+  input:checked + .slider:before{transform:translateX(22px);}
 </style>
 </head>
 <body>
-<header>
-<div class="container" style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
-<div style="display:flex;flex-direction:column">
-<div class="brand">Social Science Hub</div>
-<div style="font-size:13px;color:rgba(255,255,255,0.9)">Owner: <strong>Arijit Sir</strong> • Developer: <strong>Kuntal Roy</strong></div>
+
+<!-- LOGIN -->
+<div id="loginPage" class="login-page" style="display:flex;">
+  <div class="login-box">
+    <h2>Login</h2>
+    <input id="loginUser" placeholder="Username">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <span class="switch" onclick="showSignup()">New user? Sign Up</span>
+  </div>
 </div>
+
+<!-- SIGNUP -->
+<div id="signupPage" class="signup-page">
+  <div class="login-box">
+    <h2>Sign Up</h2>
+    <input id="signupUser" placeholder="Username">
+    <input id="signupPass" type="password" placeholder="Password">
+    <button onclick="signup()">Sign Up</button>
+    <span class="switch" onclick="showLogin()">Already have an account? Login</span>
+  </div>
 </div>
-</header>
-<main class="container">
-<section class="hero">
-<div>
-<h1>🌍 Social Science Learning Hub</h1>
-<p>Explore History, Geography, Civics, and Economics with notes, past papers, and quizzes.</p>
+
+<!-- MAIN PAGE -->
+<div id="mainPage" class="glass" style="display:none;">
+  <header>
+    <h1>Social Science Hub — Class 8 to 12</h1>
+    <p>Owner: Arijit Sir | Developer: Kuntal Roy</p>
+    <button onclick="logout()">Logout</button>
+    <label class="toggle" style="position:absolute; top:20px; left:30px;">
+      <input type="checkbox" onchange="toggleMode(this)">
+      <span class="slider"></span>
+    </label>
+  </header>
+  <div class="grid" id="subjectsGrid"></div>
+  <footer>© <span id="year"></span> Social Science Hub</footer>
 </div>
-<div class="search">
-<input id="searchInput" type="search" placeholder="🔍 Search subjects" oninput="filterSubjects()" />
+
+<!-- MODAL -->
+<div id="modal" class="modal" onclick="if(event.target==this)closeModal()">
+  <div class="modal-content" id="modalContent"></div>
 </div>
-</section>
-<section style="margin-top:24px">
-<div style="display:flex;gap:12px;align-items:center;">
-<h2 style="margin:0;font-size:24px">Subjects</h2>
-<span class="badge">Class 8–12</span>
-</div>
-<div class="grid" id="subjectsGrid"></div>
-</section>
-</main>
-<footer>© <span id="year"></span> Social Science Hub — Learn for the Future 🚀</footer>
-<div id="modal" class="modal" onclick="if(event.target.id==='modal') closeModal()">
-<div class="modal-card" id="modalCard"></div>
-</div>
+
 <script>
-// Subjects
-const subjects=[
-{ id:'his',name:'History',classes:['8','9','10','11','12'],desc:'World history, national history and civics context.'},
-{ id:'geo',name:'Geography',classes:['8','9','10','11','12'],desc:'Maps, environment, population and resources.'},
-{ id:'civ',name:'Civics',classes:['8','9','10','11','12'],desc:'Citizenship, government, rights, responsibilities.'},
-{ id:'eco',name:'Economics',classes:['9','10','11','12'],desc:'Microeconomics, macroeconomics, development studies.'}
-];
+document.getElementById("year").textContent=new Date().getFullYear();
 
-// Notes
 const notesData={
-civ:{'8':[{"question":"What is marginalisation?","answer":"Being pushed to the margins of society, denied basic services and rights."}]}};
+  civ:{8:[{question:"What is Marginalisation?",answer:"Being pushed out of mainstream society."}],9:[{question:"What is Democracy?",answer:"Government chosen by people."}],10:[{question:"What is Secularism?",answer:"Separation of religion and politics."}],11:[{question:"What is Constitution?",answer:"Framework of rules."}],12:[{question:"What is Social Justice?",answer:"Equal rights for all."}]},
+  his:{8:[{question:"Who founded Mughal Empire?",answer:"Babur"}],9:[{question:"Industrial Revolution?",answer:"18th century European industry."}],10:[{question:"What was WWII?",answer:"1939-1945 global war"}],11:[{question:"Renaissance?",answer:"14th century cultural movement"}],12:[{question:"Cold War?",answer:"USA vs USSR tension"}]},
+  geo:{8:[{question:"Map?",answer:"Representation of Earth on paper."}],9:[{question:"Plate Tectonic?",answer:"Movement of Earth's plates."}],10:[{question:"Climate?",answer:"Average weather over time"}],11:[{question:"Resource?",answer:"Anything useful"}],12:[{question:"Globalisation?",answer:"Integration of world economy and culture"}]},
+  eco:{8:[{question:"Economy?",answer:"Production & consumption"}],9:[{question:"Poverty?",answer:"Not enough resources"}],10:[{question:"Inflation?",answer:"Rise in prices"}],11:[{question:"GDP?",answer:"Total value of goods/services"}],12:[{question:"Budget?",answer:"Annual financial plan"}]}
+};
 
-// Quizzes
 const quizData={
-civ:{'8':[{"question":"Marginalisation affects which groups?","options":["Majority","Minority","Both"],"answer":2}]}};
+  civ:{8:[{question:"Which Article protects minorities?",options:["Art.14","Art.21","Art.29"],answer:"Art.29"}],9:[{question:"Head of state?",options:["PM","Governor","President"],answer:"Governor"}],10:[{question:"What is PIL?",options:["Public Interest Litigation","Private Indian Law"],answer:"Public Interest Litigation"}],11:[{question:"Who wrote Constitution?",options:["Gandhi","Ambedkar","Nehru"],answer:"Ambedkar"}],12:[{question:"Equality?",options:["Same treatment for all","Only rich"],answer:"Same treatment for all"}]}
+};
 
-document.getElementById('year').textContent=new Date().getFullYear();
-const subjectsGrid=document.getElementById('subjectsGrid');
+const subjects=[{id:"his",name:"History"},{id:"geo",name:"Geography"},{id:"civ",name:"Civics"},{id:"eco",name:"Economics"}];
 
-// Render subjects
-function renderSubjects(list){
-subjectsGrid.innerHTML='';
-list.forEach(s=>{
-const el=document.createElement('div');el.className='card';
-let classButtons=s.classes.map(cls=>`<button class="class-switch" data-subject="${s.id}" data-class="${cls}">${cls}</button>`).join('');
-el.innerHTML=`<h3>${s.name} <span style="font-size:12px;color:var(--muted)">(Class ${s.classes.join(',')})</span></h3>
-<p style="color:var(--muted);margin:6px 0">${s.desc}</p>
-<ul class="subject-list">
-<li>Notes <div style="display:flex;gap:5px;">${classButtons}</div></li>
-<li>Test <button class="test-btn" data-subject="${s.id}" data-class="${s.classes[0]}">Start Test</button></li>
-</ul>`;
-subjectsGrid.appendChild(el);
-});
-attachClassEvents();
-attachTestEvents();
+function renderSubjects(){
+  const grid=document.getElementById("subjectsGrid");
+  grid.innerHTML="";
+  subjects.forEach(sub=>{
+    const card=document.createElement("div");
+    card.className="card";
+    card.innerHTML=`<h3>${sub.name}</h3>${[8,9,10,11,12].map(cls=>`<p>Class ${cls}: <button onclick="openModal('${sub.id}',${cls},'notes')">Notes</button><button onclick="openModal('${sub.id}',${cls},'quiz')">Test</button></p>`).join('')}`;
+    grid.appendChild(card);
+  });
 }
 
-// Class buttons
-function attachClassEvents(){
-document.querySelectorAll('.class-switch').forEach(btn=>{
-btn.addEventListener('click',function(){
-const subject=this.dataset.subject;
-const cls=this.dataset.class;
-document.querySelectorAll(`.class-switch[data-subject="${subject}"]`).forEach(b=>b.classList.remove('active'));
-this.classList.add('active');
-openModal('notes',subject,cls);
-});
-});
+function openModal(sub,cls,type){
+  let content=`<h3>${sub.toUpperCase()} — Class ${cls} ${type}</h3>`;
+  if(type==="notes" && notesData[sub] && notesData[sub][cls]){content+=`<ul>${notesData[sub][cls].map(q=>`<li><b>Q:</b> ${q.question}<br><b>A:</b> ${q.answer}</li>`).join('')}</ul>`;}
+  else if(type==="quiz" && quizData[sub] && quizData[sub][cls]){content+=quizData[sub][cls].map((q,i)=>`<p><b>${i+1}. ${q.question}</b><br>${q.options.map(o=>`<button onclick="alert('You chose ${o}')">${o}</button>`).join(' ')}</p>`).join('');}
+  else{content+="<p>No data available.</p>";}
+  content+=`<button onclick="closeModal()">Close</button>`;
+  document.getElementById("modalContent").innerHTML=content;
+  document.getElementById("modal").style.display="flex";
 }
 
-// Test buttons
-function attachTestEvents(){
-document.querySelectorAll('.test-btn').forEach(btn=>{
-btn.addEventListener('click',function(){
-const subject=this.dataset.subject;
-const cls=this.dataset.class;
-openModal('quiz',subject,cls);
-});
-});
+function closeModal(){document.getElementById("modal").style.display="none";}
+
+function showSignup(){document.getElementById("loginPage").style.display="none";document.getElementById("signupPage").style.display="flex";}
+function showLogin(){document.getElementById("signupPage").style.display="none";document.getElementById("loginPage").style.display="flex";}
+
+function signup(){
+  let u=document.getElementById("signupUser").value;
+  let p=document.getElementById("signupPass").value;
+  if(u && p){localStorage.setItem("user_"+u,p);alert("Signup success! Login now.");showLogin();}
+  else alert("Fill all fields");
 }
 
-// Filter
-function filterSubjects(){
-const q=document.getElementById('searchInput').value.toLowerCase().trim();
-renderSubjects(subjects.filter(s=>s.name.toLowerCase().includes(q)||s.desc.toLowerCase().includes(q)));
+function login(){
+  let u=document.getElementById("loginUser").value;
+  let p=document.getElementById("loginPass").value;
+  if(localStorage.getItem("user_"+u)===p){
+    document.getElementById("loginPage").style.display="none";
+    document.getElementById("mainPage").style.display="block";
+    renderSubjects();
+  } else alert("Invalid credentials");
 }
 
-// Modal open
-function openModal(type,id,cls){
-const modal=document.getElementById('modal');
-const card=document.getElementById('modalCard');
-modal.classList.add('open');
-let content='';
-if(type==='notes'){
-const data=notesData[id]&&notesData[id][cls];
-if(data){let qaHTML=data.map(q=>`<li><strong>Q:</strong> ${q.question}<br><strong>A:</strong> ${q.answer}</li>`).join('');content=`<h3>${id.toUpperCase()} — Class ${cls} Notes</h3><ul>${qaHTML}</ul><button onclick="closeModal()">Close</button>`;}
-else{content=`<h3>${id.toUpperCase()} — Class ${cls} Notes</h3><p>No notes available yet.</p><button onclick="closeModal()">Close</button>`;}
-}
-if(type==='quiz'){
-const quiz=quizData[id]&&quizData[id][cls];
-if(quiz){let qHTML=quiz.map((q,i)=>`<p><strong>${i+1}. ${q.question}</strong></p>${q.options.map((o,j)=>`<button onclick="alert('${o} selected')">${o}</button>`).join(' ')}`).join('<hr>');content=`<h3>${id.toUpperCase()} — Class ${cls} Test</h3>${qHTML}<button onclick="closeModal()">Close</button>`;}
-else{content=`<h3>${id.toUpperCase()} — Class ${cls} Test</h3><p>No quiz available yet.</p><button onclick="closeModal()">Close</button>`;}
-}
-card.innerHTML=content;
+function logout(){
+  document.getElementById("mainPage").style.display="none";
+  document.getElementById("loginPage").style.display="flex";
 }
 
-function closeModal(){document.getElementById('modal').classList.remove('open');}
-
-renderSubjects(subjects);
+function toggleMode(cb){
+  document.body.classList.toggle('light', cb.checked);
+}
 </script>
 </body>
 </html>
